@@ -30,7 +30,7 @@ import wandb
 wandb.login()
 wandb.init(project="midi-player")
 mp = MIDIPlayer(midi_file, 300, viz_type="waterfall")
-wandb.log(wandb.Html(mp.html))
+wandb.log({'player':wandb.Html(mp.html)})
 wandb.finish()
 
 ```
