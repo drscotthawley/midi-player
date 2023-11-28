@@ -1,4 +1,4 @@
-# A callback functions to define and style the player/visualizer
+# Callback functions to define and style the player/visualizer
 
 def basic(url, viz_type="piano-roll"):
     return f'''
