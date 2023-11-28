@@ -5,7 +5,7 @@ Python launcher of the animated MIDI player by [@cifkao](https://github.com/cifk
 # Installation
 
 ```
-!pip install midi-player
+pip install midi-player
 ```
 
 # Usage
