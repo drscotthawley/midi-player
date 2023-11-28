@@ -44,4 +44,5 @@ See `midi_player/*.py` for now ;-).
 
 # Known Issues
 * Not sure why the staff view is putting out 32nd notes / how to tell it to do 8th notes instead.
+* If you need a "Download the MIDI" button, yol may need to offer a separate way to do that. ...Not sure. See [`html-midi-player`](https://github.com/cifkao/html-midi-player) for more info. 
 
