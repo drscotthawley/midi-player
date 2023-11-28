@@ -1,7 +1,7 @@
 # midi-player
 Python launcher of the [`html-midi-player`](https://github.com/cifkao/html-midi-player) by [@cifkao](https://github.com/cifkao) &amp; [@magenta](https://github.com/magenta)
 
-Compatible with Jupyter, Colab, WandB,...probably other contexts. 
+Works with local and web-hosted MIDI files in Jupyter, Colab, WandB,...probably other contexts. 
 
 # Installation
 
