@@ -45,5 +45,6 @@ See `midi_player/*.py` for now ;-).
 
 # Known Issues / Release Notes
 * Not sure why the staff view is putting out 32nd notes / how to tell it to do 8th notes instead.
+* v0.4: Refactored `stylers.py`. Added a `dark` mode styler. 
 * v0.3: Added an optional Download link! (Maybe you'll think it's ugly but it works.) Note: WandB disables usual opening-in-new tab browser behavior, so on WandB you'll need to Right-Click the download link and choose "Open in New Tab" to get the file. 
 
