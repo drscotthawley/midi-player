@@ -1,0 +1,36 @@
+{
+    "os": "macOS-14.1.1-arm64-arm-64bit",
+    "python": "3.11.4",
+    "heartbeatAt": "2023-11-28T04:10:10.126607",
+    "startedAt": "2023-11-28T04:10:09.619510",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "examples/html_midi_player.ipynb",
+    "codePathLocal": null,
+    "root": "/Users/shawley/github/midi-player",
+    "git": {
+        "remote": "https://github.com/drscotthawley/midi-player.git",
+        "commit": "e46cb28dc441cff1d178546bae29337a5ae406f2"
+    },
+    "email": "scott.hawley@belmont.edu",
+    "host": "Chonk.local",
+    "username": "shawley",
+    "executable": "/Users/shawley/envs/dlaie/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "/": {
+            "total": 3721.8717193603516,
+            "used": 9.215930938720703
+        }
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 64.0
+    }
+}
