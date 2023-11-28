@@ -39,4 +39,8 @@ See `examples/` for more.
 
 # Documentation
 
-See `midi_player/*.py` for now ;-). 
+TO-DO. Particularly, people will want to know how to add/customize their own "stylers". 
+See `midi_player/*.py` for now ;-).
+
+# Known Issues
+* Not sure why the staff view is putting out 32nd notes / how to tell it to do 8th notes instead. 
