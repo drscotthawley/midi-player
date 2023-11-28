@@ -22,3 +22,5 @@ MIDIPlayer(midi_file_url, 400)
 MIDIPlayer(midi_file, 160, styler=cifka_advanced)
 MIDIPlayer(midi_file, 300, viz_type="waterfall") 
 ```
+
+See `examples/` for more.
