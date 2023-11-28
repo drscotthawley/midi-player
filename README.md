@@ -10,7 +10,7 @@ Python launcher of the animated MIDI player by [@cifkao](https://github.com/cifk
 
 # Usage
 
-Intended for (and only used with) Jupyter Notebooks & Colab: 
+Only tested with Jupyter Notebooks & Colab, but uses no IPython dependencies so it *should* work in other contexts.
 ```python
 
 from midi_player import MIDIPlayer
