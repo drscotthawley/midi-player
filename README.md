@@ -10,6 +10,7 @@ Python launcher of animated MIDI player by @cifkao &amp; Magenta
 
 # Usage
 
+Intended (and only used with) Jupyter Notebooks & Colab: 
 ```python
 
 from midi_player import MIDIPlayer
@@ -20,7 +21,18 @@ midi_file = "data/test_midi.mid"
 
 MIDIPlayer(midi_file_url, 400)  
 MIDIPlayer(midi_file, 160, styler=cifka_advanced)
-MIDIPlayer(midi_file, 300, viz_type="waterfall") 
+```
+
+With `wandb`:
+```python
+import wandb
+
+wandb.login()
+wandb.init(project="midi-player")
+mp = MIDIPlayer(midi_file, 300, viz_type="waterfall")
+wandb.log(wandb.Html(mp.html))
+wandb.finish()
+
 ```
 
 See `examples/` for more.
