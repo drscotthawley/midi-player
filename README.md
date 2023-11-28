@@ -37,4 +37,6 @@ wandb.finish()
 
 See `examples/` for more.
 
-See `midi_player/*.py` for the docs ;-) 
+# Documentation
+
+See `midi_player/*.py` for now ;-). 
