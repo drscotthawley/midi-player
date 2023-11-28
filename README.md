@@ -1,5 +1,5 @@
 # midi-player
-Python launcher of animated MIDI player by @cifkao &amp; Magenta
+Python launcher of the animated MIDI player by [@cifkao](https://github.com/cifkao) &amp; [@magenta](https://github.com/magenta)
 
 
 # Installation
