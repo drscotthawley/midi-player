@@ -43,7 +43,7 @@ See `examples/` for more.
 TO-DO. Particularly, people will want to know how to add/customize their own "stylers". 
 See `midi_player/*.py` for now ;-).
 
-# Known Issues
+# Known Issues / Release Notes
 * Not sure why the staff view is putting out 32nd notes / how to tell it to do 8th notes instead.
-* If you need a "Download the MIDI" button, you may need to offer a separate way to do that. See [this Issue](https://github.com/cifkao/html-midi-player/issues/13) in the [`html-midi-player`](https://github.com/cifkao/html-midi-player) repo.
+* v0.3: Added an optional Download link! (Maybe you'll think it's ugly but it works.) Note: WandB disables usual opening-in-new tab browser behavior, so on WandB you'll need to Right-Click the download link and choose "Open in New Tab" to get the file. 
 

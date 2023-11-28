@@ -4,6 +4,7 @@ import json
 import os
 import base64
 from .stylers import basic, cifka_advanced
+from functools import partial
 
 class MIDIPlayer:
     """
@@ -19,11 +20,13 @@ class MIDIPlayer:
         styler=basic,           # optional callback for generating player HTML
         player_html_maker=None, # backward-compatible duplicate of styler
         viz_type="piano-roll",  # piano-roll, waterfall, staff
+        dl=True,                # include a "Download MIDI" link
         debug=False,):
         self.width, self.height, self.viz_type, self.debug = width, height, viz_type, debug
         if player_html_maker is not None: #backward compatibility, override styler
             styler = player_html_maker
-        self.html = self.to_player_html(url_or_file, styler=styler)
+        self.html = self.to_player_html(url_or_file, styler=partial(styler, dl=dl))
+        #self.url = url_or_file  # for later, will point to external file or data url
 
     def _repr_html_(self, **kwargs):
         """The part that displays the MIDIPlayer in a Jupyter notebook."""
@@ -32,10 +35,12 @@ class MIDIPlayer:
             "allowfullscreen" "webkitallowfullscreen" "mozallowfullscreen">'
             </iframe>'''
 
-    def to_player_html(self, url, styler=basic):
-        if os.path.isfile(url): # if url points to local file, convert file to data url
-            url = self.to_data_url(url)
-        return styler(url, viz_type=self.viz_type)
+    def to_player_html(self, url_or_file, styler=basic):
+        if os.path.isfile(url_or_file): # if url_or_file points to local file, convert file to data url
+            self.url = self.to_data_url(url_or_file)
+        else: 
+            self.url = url_or_file
+        return styler(self.url, viz_type=self.viz_type)
 
     def to_data_url(self, midi_filename):  # this is crucial for Colab/WandB support
         with open(midi_filename, "rb") as f:

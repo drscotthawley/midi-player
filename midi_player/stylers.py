@@ -1,18 +1,19 @@
 # Callback functions to define and style the player/visualizer
 
-def basic(url, viz_type="piano-roll"):
-    return f'''
-            <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+src_header = '''<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>'''
+
+def basic(url, viz_type="piano-roll", dl=True):
+    dl_str = f'<a href="{url}" target="_blank">Download MIDI</a><br>' if dl else ''
+    return f'''{src_header}{dl_str}
             <midi-player src="{url}" sound-font visualizer="#myVisualizer"></midi-player>
             <midi-visualizer type="{viz_type}" id="myVisualizer" style="background: #fff;"></midi-visualizer>'''
 
 
-
-def cifka_advanced(midi_file_url, viz_type="piano-roll"):
+def cifka_advanced(url, viz_type="piano-roll", dl=True):
 # source: Ondřej Cífka's "HTML MIDI Player Advanced Examples": https://codepen.io/cifkao/pen/GRZxqZN.  
 # Repeated use of "#section3" doesn't seem to be an issue...yet. Might have to give each section a unique/random id.
-    return '''
-<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+    dl_str = f'<a href="{url}" target="_blank">Download MIDI</a><br>' if dl else ''
+    return f'{src_header}' + '''
 
 <style>
 /* Custom player style */
@@ -79,7 +80,10 @@ def cifka_advanced(midi_file_url, viz_type="piano-roll"):
 </style>
 ''' + f'''
 <section id="section3">
-<midi-player src={midi_file_url} sound-font visualizer="#section3 midi-visualizer"></midi-player>
-<midi-visualizer src={midi_file_url} type={viz_type}></midi-visualizer>
+{dl_str}
+<midi-player src={url} sound-font visualizer="#section3 midi-visualizer"></midi-player>
+<midi-visualizer src={url} type={viz_type}></midi-visualizer>
 </section>
 '''
+
+
