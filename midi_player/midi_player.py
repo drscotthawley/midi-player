@@ -18,14 +18,18 @@ class MIDIPlayer:
         height,                 # Required arg because reasons
         width='100%',
         styler=basic,           # optional callback for generating player HTML
-        player_html_maker=None, # backward-compatible duplicate of styler
         viz_type="piano-roll",  # piano-roll, waterfall, staff
+        title="",               # optional title/header
         dl=True,                # include a "Download MIDI" link
-        debug=False,):
-        self.width, self.height, self.viz_type, self.debug = width, height, viz_type, debug
+        debug=False,
+        player_html_maker=None, # backward-compatible duplicate of 'styler' [deprecated]
+        ):
+        self.width, self.height, self.viz_type, self.dl, self.debug = width, height, viz_type, dl, debug
+        self.title = "&nbsp;" if title=="" else title
         if player_html_maker is not None: #backward compatibility, override styler
-            styler = player_html_maker
-        self.html = self.to_player_html(url_or_file, styler=partial(styler, dl=dl))
+            raise DeprecationWarning("player_html_maker is deprecated; use styler instead")
+            styler = player_html_maker  
+        self.html = self.to_player_html(url_or_file, styler=styler)
         #self.url = url_or_file  # for later, will point to external file or data url
 
     def _repr_html_(self, **kwargs):
@@ -40,7 +44,7 @@ class MIDIPlayer:
             self.url = self.to_data_url(url_or_file)
         else: 
             self.url = url_or_file
-        return styler(self.url, viz_type=self.viz_type)
+        return styler(self.url, viz_type=self.viz_type, dl=self.dl, title=self.title)
 
     def to_data_url(self, midi_filename):  # this is crucial for Colab/WandB support
         with open(midi_filename, "rb") as f:

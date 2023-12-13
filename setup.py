@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setup(
     name='midi-player',
-    version='0.4',
+    version='0.5.1',
     url='https://github.com/drscotthawley/midi-player',
     project_urls={
         'Source': 'https://github.com/drscotthawley/midi-player',  
